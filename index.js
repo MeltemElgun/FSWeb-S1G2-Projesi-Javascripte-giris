@@ -19,8 +19,13 @@ Aşağıdakileri yapın:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
-
+let surucuYasi=18;
+if(surucuYasi>=18){
+  console.log(true)
+}
+else{
+  console.log(false)
+}
 
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
@@ -33,7 +38,12 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
+let birinciDeger=10
+let ikinciDegeri=10
+if (birinciDeger===ikinciDegeri) {
+ birinciDeger=9
+}
+console.log(birinciDeger);
 
 
 
@@ -48,8 +58,9 @@ Aşağıdakileri yapın:
 
    İPUCU: Number metoduna bakabilirsin
 */
-
-
+let deger1=99
+let deger2=Number(deger1);
+console.log(deger2);
 
 
 /*
@@ -61,9 +72,10 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a,b){
+  return a*b;
 }
+console.log(carpma(2,5));
 
 
 
@@ -77,10 +89,10 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(yas){
+ return yas*7;
 }
-
+console.log(kopeginYasi(1));
 
 
 /* Görev 3 */
@@ -103,10 +115,18 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
+let number=Math.floor(Math.random()*3);
+const deger=["Taş","Kağit","Makas"];
+let secim=deger[number];
 
 function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
-}
+  if (oyuncu==="Makas"&&bilgisayar==="Kağit"||oyuncu==="Kağit"&&bilgisayar==="Taş"||oyuncu==="Taş"&&bilgisayar==="Makas")return "Kazandin!"
+    
+  else if (oyuncu===bilgisayar)return"Beraberlik"
+
+  else{}return"Kaybettin!"
+  }
+console.log(oyun(secim,secim));
 
 
 
@@ -120,10 +140,12 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
+function milDonusturucu(Kilometre){
+  let milDonusturucu=Kilometre/1.609344;
+  return milDonusturucu;
   /*buraya kodunu yazabilirsin*/
 }
-
+console.log(milDonusturucu(5));
 
 
 //Görev 4b - Santimetreden Feet
@@ -134,9 +156,12 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
+function feetDonusturucu(Santimetre){
+  let feet=Santimetre*0.032808
+  return feet;
   /*buraya kodunu yazabilirsin*/
 }
+console.log(feetDonusturucu(2));
 
 
 
@@ -153,10 +178,15 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
-}
-
+function cocukSarkisi(sayı){
+   let metin=sayı+"küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
+   return metin;
+   }
+    for (let i = 10; i > 0; i--) {
+      console.log(cocukSarkisi(i));
+    }
+      
+    
 
 /* Görev 6 : Not Hesaplayıcı */
 
@@ -173,10 +203,24 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(sinavSonuc){
+if (sinavSonuc>=90 && sinavSonuc<=100) {
+  return("A aldin")
 }
-
+else if(sinavSonuc>=80){
+  return("B aldin")
+}
+else if(sinavSonuc>=70){
+  return("C aldin")
+}
+else if(sinavSonuc>=60){
+  return("D aldin")
+}
+else{
+  return("F aldin");
+}
+}
+console.log(notHesapla(70));
 
 
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
@@ -190,9 +234,17 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
+let toplam=0;
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(karakter) {
+  const sesliHarfler=["a", "e","i","o","u"];
+  for (let i = 0; i < sesliHarfler.length; i++) {
+    let result = karakter.includes(sesliHarfler[i]);
+    toplam+=result
+    return toplam;
+  }
+
+  console.log(sesliHarfSayaci("melteme"));
 }
 
 
