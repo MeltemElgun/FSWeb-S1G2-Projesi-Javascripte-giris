@@ -120,11 +120,20 @@ const deger=["Taş","Kağit","Makas"];
 let secim=deger[number];
 
 function oyun(oyuncu, bilgisayar){
-  if (oyuncu==="Makas"&&bilgisayar==="Kağit"||oyuncu==="Kağit"&&bilgisayar==="Taş"||oyuncu==="Taş"&&bilgisayar==="Makas")return "Kazandin!"
-    
-  else if (oyuncu===bilgisayar)return"Beraberlik"
+  if ((oyuncu==="Makas"&&bilgisayar==="Kağit")
+    ||(oyuncu==="Kağit"&&bilgisayar==="Taş")
+      ||(oyuncu==="Taş"&&bilgisayar==="Makas")){
+        return "Kazandin!"
+      }
+     
+  else if (oyuncu===bilgisayar){
+    return "Beraberlik"
+  } 
 
-  else{}return"Kaybettin!"
+  else{
+    return"Kaybettin!"
+  }
+ 
   }
 console.log(oyun(secim,secim));
 
