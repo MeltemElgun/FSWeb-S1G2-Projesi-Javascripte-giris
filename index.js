@@ -243,19 +243,21 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-let toplam=0;
+let isim="meltem";
 
 function sesliHarfSayaci(karakter) {
-  const sesliHarfler=["a", "e","i","o","u"];
-  for (let i = 0; i < sesliHarfler.length; i++) {
-    let result = karakter.includes(sesliHarfler[i]);
-    toplam+=result
-    return toplam;
+  const sesliHarfler=["a", "e","i","ı","ö","o","ü","u"];
+  let harfler=isim.split("");
+  let sayı=0;
+  for (let i = 0; i < harfler.length; i++) {
+    if(sesliHarfler.includes(harfler[i])){
+      sayı++;
+    }
   }
-
-  console.log(sesliHarfSayaci("melteme"));
+  return sayı;
+  
 }
-
+console.log(sesliHarfSayaci(isim));
 
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
