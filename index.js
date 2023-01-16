@@ -19,12 +19,11 @@ Aşağıdakileri yapın:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-let surucuYasi=18;
-if(surucuYasi>=18){
-  console.log(true)
-}
-else{
-  console.log(false)
+let surucuYasi = 18;
+if (surucuYasi >= 18) {
+  console.log(true);
+} else {
+  console.log(false);
 }
 
 /*
@@ -38,15 +37,12 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-let birinciDeger=10
-let ikinciDegeri=10
-if (birinciDeger===ikinciDegeri) {
- birinciDeger=9
+let birinciDeger = 10;
+let ikinciDegeri = 10;
+if (birinciDeger === ikinciDegeri) {
+  birinciDeger = 9;
 }
 console.log(birinciDeger);
-
-
-
 
 /*
 Görev 1c - String bir değeri Number'a dönüştürün (puanlamaya dahil değildir)
@@ -58,10 +54,9 @@ Aşağıdakileri yapın:
 
    İPUCU: Number metoduna bakabilirsin
 */
-let deger1=99
-let deger2=Number(deger1);
+let deger1 = 99;
+let deger2 = Number(deger1);
 console.log(deger2);
-
 
 /*
 Görev 1d - Çarpma
@@ -72,13 +67,10 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(a,b){
-  return a*b;
+function carpma(a, b) {
+  return a * b;
 }
-console.log(carpma(2,5));
-
-
-
+console.log(carpma(2, 5));
 
 /* Görev 2 : Köpeğin Yaşı */
 
@@ -89,11 +81,10 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(yas){
- return yas*7;
+function kopeginYasi(yas) {
+  return yas * 7;
 }
 console.log(kopeginYasi(1));
-
 
 /* Görev 3 */
 
@@ -115,29 +106,25 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
-let number=Math.floor(Math.random()*3);
-const deger=["Taş","Kağit","Makas"];
-let secim=deger[number];
 
-function oyun(oyuncu, bilgisayar){
-  if ((oyuncu==="Makas"&&bilgisayar==="Kağit")
-    ||(oyuncu==="Kağit"&&bilgisayar==="Taş")
-      ||(oyuncu==="Taş"&&bilgisayar==="Makas")){
-        return "Kazandin!"
-      }
-     
-  else if (oyuncu===bilgisayar){
-    return "Beraberlik"
-  } 
+const deger = ["Taş", "Kağit", "Makas"];
+let number = Math.floor(Math.random() * 3);
+let secim = deger[number];
 
-  else{
-    return"Kaybettin!"
+function oyun(oyuncu, bilgisayar) {
+  if (
+    (oyuncu === "Makas" && bilgisayar === "Kağıt") ||
+    (oyuncu === "Kağıt" && bilgisayar === "Taş") ||
+    (oyuncu === "Taş" && bilgisayar === "Makas")
+  ) {
+    return "Kazandın!";
+  } else if (oyuncu === bilgisayar) {
+    return "Beraberlik";
+  } else {
+    return "Kaybettin!";
   }
- 
-  }
-console.log(oyun(secim,secim));
-
-
+}
+console.log(oyun(secim, secim));
 
 /* Görev 4 : Metrik Dönüştürücü */
 
@@ -149,13 +136,12 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(Kilometre){
-  let milDonusturucu=Kilometre/1.609344;
+function milDonusturucu(Kilometre) {
+  let milDonusturucu = Kilometre * 0.621371;
   return milDonusturucu;
   /*buraya kodunu yazabilirsin*/
 }
 console.log(milDonusturucu(5));
-
 
 //Görev 4b - Santimetreden Feet
 /*
@@ -165,14 +151,12 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(Santimetre){
-  let feet=Santimetre*0.032808
+function feetDonusturucu(Santimetre) {
+  let feet = Santimetre / 30.48;
   return feet;
   /*buraya kodunu yazabilirsin*/
 }
 console.log(feetDonusturucu(2));
-
-
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımızı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
 
@@ -187,15 +171,15 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(sayı){
-   let metin=sayı+"küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
-   return metin;
-   }
-    for (let i = 10; i > 0; i--) {
-      console.log(cocukSarkisi(i));
-    }
-      
-    
+function cocukSarkisi(sayı) {
+  let metin =
+    sayı +
+    " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
+  return metin;
+}
+for (let i = 10; i > 0; i--) {
+  console.log(cocukSarkisi(i));
+}
 
 /* Görev 6 : Not Hesaplayıcı */
 
@@ -212,25 +196,20 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(sinavSonuc){
-if (sinavSonuc>=90 && sinavSonuc<=100) {
-  return("A aldin")
-}
-else if(sinavSonuc>=80){
-  return("B aldin")
-}
-else if(sinavSonuc>=70){
-  return("C aldin")
-}
-else if(sinavSonuc>=60){
-  return("D aldin")
-}
-else{
-  return("F aldin");
-}
+function notHesapla(sinavSonuc) {
+  if (sinavSonuc >= 90 && sinavSonuc <= 100) {
+    return "A aldın";
+  } else if (sinavSonuc >= 80) {
+    return "B aldın";
+  } else if (sinavSonuc >= 70) {
+    return "C aldın";
+  } else if (sinavSonuc >= 60) {
+    return "D aldın";
+  } else {
+    return "F aldın";
+  }
 }
 console.log(notHesapla(70));
-
 
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
 
@@ -243,27 +222,25 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-let isim="meltem";
+let isim = "meltem";
 
 function sesliHarfSayaci(karakter) {
-  const sesliHarfler=["a", "e","i","ı","ö","o","ü","u"];
-  let harfler=isim.split("");
-  let sayı=0;
+  const sesliHarfler = ["a", "e", "i", "ı", "ö", "o", "ü", "u"];
+  let harfler = isim.split("");
+  let sayı = 0;
   for (let i = 0; i < harfler.length; i++) {
-    if(sesliHarfler.includes(harfler[i])){
+    if (sesliHarfler.includes(harfler[i])) {
       sayı++;
     }
   }
   return sayı;
-  
 }
 console.log(sesliHarfSayaci(isim));
 
-
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
-function sa(){
-  console.log('Kodlar çalışıyor');
-  return 'as';
+function sa() {
+  console.log("Kodlar çalışıyor");
+  return "as";
 }
 sa();
 /* Bu satırdan sonrasını değiştirmeyin */
@@ -275,5 +252,5 @@ module.exports = {
   milDonusturucu,
   feetDonusturucu,
   cocukSarkisi,
-  notHesapla
-}
+  notHesapla,
+};
